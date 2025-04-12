@@ -1,6 +1,8 @@
-﻿namespace WAMFF.Core.Models;
+﻿using System.Text.Json.Serialization;
 
-public class ConfigModel
+namespace WAMFF.Core.Models;
+
+public class ConfigModel 
 {
     public List<string> DirectoryPath { get; set; } = [];
     public bool IsVSCodeInstalled { get; set; } = false;
@@ -18,4 +20,10 @@ public class ConfigModel
             VSCodePath = vs_code_path
         };
     }
+}
+
+[JsonSourceGenerationOptions(WriteIndented = true)]
+[JsonSerializable(typeof(ConfigModel))]
+public partial class ConfigModelContext : JsonSerializerContext {
+
 }

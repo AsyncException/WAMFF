@@ -14,10 +14,10 @@ public class FileRepository(ILiteDatabase database) : IFileRepository
     private readonly ILiteCollection<FileStats> collection = database.GetCollection<FileStats>();
 
     public void CleanDeletedCategory(Guid id) {
-        collection.UpdateMany(
-            e => new FileStats { Category = Guid.Empty, FileId = e.FileId, PreviousFileName = e.PreviousFileName, Tags = e.Tags },
-            e => e.Category == id
-            );
+        foreach(FileStats stats in collection.Find(e => e.Category == id)) {
+            stats.Category = Guid.Empty;
+            collection.Update(stats);
+        }
     }
 
     public void Update(FileStats stats) {

@@ -5,9 +5,11 @@ namespace WAMFF.Core.Services;
 
 public static class ConfigurationProvider
 {
-    private static readonly string path = "AppSettings.json";
-    private static readonly JsonSerializerOptions options = new() { WriteIndented = true };
-
+#if DEBUG
+    private static string path = "AppSettings.json";
+#else
+    private static string path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "WAMF", "AppSettings.json");
+#endif
     private static ConfigModel? _currentConfig = null;
 
     public static ConfigModel CurrentConfig {
@@ -26,14 +28,14 @@ public static class ConfigurationProvider
         ConfigModel? config = null;
         if (File.Exists(path)) {
             using FileStream stream = File.OpenRead(path);
-            config = JsonSerializer.Deserialize<ConfigModel>(stream);
+            config = JsonSerializer.Deserialize<ConfigModel>(stream, ConfigModelContext.Default.ConfigModel);
         }
 
         if (config is null) {
             config = ConfigModel.GetDefault();
             using FileStream stream = File.Create(path);
             stream.SetLength(0);
-            JsonSerializer.Serialize(stream, config, options);
+            JsonSerializer.Serialize(stream, config, ConfigModelContext.Default.ConfigModel);
             stream.Flush();
         }
 
@@ -43,7 +45,7 @@ public static class ConfigurationProvider
     private static void SaveConfig(ConfigModel config) {
         using FileStream stream = File.Create(path);
         stream.SetLength(0);
-        JsonSerializer.Serialize(stream, config, options);
+        JsonSerializer.Serialize(stream, config, ConfigModelContext.Default.ConfigModel);
         stream.Flush();
     }
 }

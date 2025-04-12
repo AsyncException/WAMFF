@@ -25,6 +25,8 @@ namespace WAMFF
         /// executed, and as such is the logical equivalent of main() or WinMain().
         /// </summary>
         public App() {
+            Environment.SetEnvironmentVariable("MICROSOFT_WINDOWSAPPRUNTIME_BASE_DIRECTORY", AppContext.BaseDirectory);
+
             this.InitializeComponent();
             Ioc.Default.ConfigureServices(new ServiceCollection()
                 .AddSingleton<BackDropController>()
@@ -53,8 +55,12 @@ namespace WAMFF
         private Window? m_window;
 
         private static ILiteDatabase CreateDatabase(IServiceProvider provider) {
-            string directory_path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "WAMF");
+#if DEBUG
+            string directory_path = AppContext.BaseDirectory;
+#else
 
+            string directory_path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "WAMF");
+#endif
             if (!Directory.Exists(directory_path)) {
                 Directory.CreateDirectory(directory_path);
             }

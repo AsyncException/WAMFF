@@ -106,6 +106,6 @@ public class FileStats
 
 public class CombinedFile
 {
-    public FileDetails Details { get; set; }
-    public FileStats Stats { get; set; }
+    public FileDetails Details { get; set; } = new();
+    public FileStats Stats { get; set; } = new();
 }

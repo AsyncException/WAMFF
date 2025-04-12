@@ -162,8 +162,9 @@ public partial class FileDisplayViewModel(CombinedFile file) : ObservableObject
     #endregion
 }
 
-public partial class TagsUpdateContext {
-    public string Tag { get; set; } = string.Empty;
+public partial class TagsUpdateContext : ObservableObject {
+    [ObservableProperty]
+    public partial string Tag { get; set; } = string.Empty;
     public ObservableCollection<TagsUpdateContext> Tags { get; set; } = new();
 
     [RelayCommand]
