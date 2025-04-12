@@ -19,8 +19,7 @@ Instead, it’s here to complement your file workflow — focusing solely on man
 - 🏷️ Tag Everything: Apply multiple tags to each file for lightning-fast filtering.
 - 🔍 Search Bar with Live Filter: Instantly find what you're looking for with a top-bar search.
 - 📑 File Metadata at a Glance: View file size, type, extension, creation date, and last modified date.
-- 📁 Support for PDFs and Excel Files: Easily manage common document types with proper previews.
-- ✅ Modern and Minimal UI: Clean, dark-themed interface designed for productivity and aesthetics.
+- ✅ Modern and Minimal UI: Clean, acrylic-themed interface designed for productivity and aesthetics.
 
 ## 📦 Installation
 Coming soon...
@@ -32,9 +31,6 @@ Coming soon...
 
 ## 🔧 Planned Features
 - Sorting by columns
-
-## 💡 Why WAMFF?
-Because regular file explorers aren't enough when you're juggling PDFs, spreadsheets, and random documents scattered across folders you forgot you made. WAMFF puts you back in control.
 
 ## 📄 License
 MIT License.
