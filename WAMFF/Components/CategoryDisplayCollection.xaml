@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserControl
+    x:Class="WAMFF.Components.CategoryDisplayCollection"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:components="using:WAMFF.Components"
+    xmlns:viewModels="using:WAMFF.Core.ViewModels"
+    d:DataContext="{d:DesignInstance Type=components:CategoryDisplayCollection}"
+    x:Name="RootControl"
+    mc:Ignorable="d">
+
+    <Grid HorizontalAlignment="Stretch">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Button HorizontalAlignment="Stretch" Grid.Row="0" Command="{x:Bind ViewModel.CreateNewCategoryCommand}">
+            <StackPanel Orientation="Horizontal" Background="Transparent">
+                <FontIcon Glyph="&#xe598;" FontFamily="{StaticResource MaterialSymbolsOutlined}" Foreground="{ThemeResource AccentAAFillColorDefaultBrush}" />
+                <TextBlock Text="New category" />
+            </StackPanel>
+        </Button>
+
+        <ListView Grid.Row="4" ItemsSource="{x:Bind ViewModel.Categories}" SelectedItem="{x:Bind ViewModel.SelectedCategory, Mode=TwoWay}" SelectedIndex="0">
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="viewModels:CategoryDisplayViewModel">
+                    <components:CategoryDisplay ViewModel="{x:Bind}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <ContentDialog x:Name="CreateDialog" PrimaryButtonText="Accept" CloseButtonText="Cancel" Title="Create category">
+            <StackPanel>
+                <TextBox PlaceholderText="Category Name" Text="{x:Bind ViewModel.CreateName, Mode=TwoWay}" />
+                <ColorPicker Color="{x:Bind ViewModel.CreateColor, Mode=TwoWay}" />
+            </StackPanel>
+        </ContentDialog>
+    </Grid>
+</UserControl>

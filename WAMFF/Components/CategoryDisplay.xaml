@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserControl
+    x:Class="WAMFF.Components.CategoryDisplay"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="using:WAMFF.Components"
+    xmlns:converters="using:WAMFF.Core.Converters"
+    d:DataContext="{d:DesignInstance Type=local:FileDisplay}"
+    mc:Ignorable="d">
+
+    <StackPanel Orientation="Horizontal" Background="Transparent">
+        <FontIcon Glyph="&#xe866;" FontFamily="{StaticResource MaterialSymbolsOutlined}" Foreground="{x:Bind converters:HexConverter.ConvertHex(ViewModel.Category.Color), Mode=OneWay}" />
+        <TextBlock Text="{x:Bind ViewModel.Category.Name, Mode=OneWay}" />
+
+        <ContentDialog x:Name="DeleteDialog" PrimaryButtonText="Delete" CloseButtonText="Cancel" Title="Create category">
+            <ContentDialog.TitleTemplate>
+                <DataTemplate>
+                    <TextBlock Text="Delete category" />
+                </DataTemplate>
+            </ContentDialog.TitleTemplate>
+
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Are you sure you want to delete category: '" />
+                <TextBlock Text="{x:Bind ViewModel.Category.Name, Mode=OneWay}" />
+                <TextBlock Text="'?" />
+            </StackPanel>
+        </ContentDialog>
+
+        <ContentDialog x:Name="EditDialog" PrimaryButtonText="Edit" CloseButtonText="Cancel" Title="Edit category">
+            <ContentDialog.TitleTemplate>
+                <DataTemplate>
+                    <TextBlock Text="Edit category" />
+                </DataTemplate>
+            </ContentDialog.TitleTemplate>
+
+            <StackPanel>
+                <TextBox PlaceholderText="Category Name" Text="{x:Bind ViewModel.EditName, Mode=TwoWay}" />
+                <ColorPicker Color="{x:Bind ViewModel.EditColor, Mode=TwoWay}" />
+            </StackPanel>
+        </ContentDialog>
+
+        <StackPanel.ContextFlyout>
+            <MenuFlyout>
+                <MenuFlyoutItem Text="Edit" Command="{x:Bind ViewModel.EditCategoryCommand, Mode=OneWay}" />
+                <MenuFlyoutSeparator />
+                <MenuFlyoutItem Text="Delete" Command="{x:Bind ViewModel.DeleteCategoryCommand, Mode=OneWay}" />
+            </MenuFlyout>
+        </StackPanel.ContextFlyout>
+    </StackPanel>
+</UserControl>

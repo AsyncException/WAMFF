@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserControl
+    x:Class="WAMFF.Components.TagDisplayCollection"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WAMFF.Components"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <ListView x:Name="TagListView" ItemsSource="{x:Bind ViewModel.Tags}" SelectionMode="Multiple" SelectionChanged="{x:Bind ViewModel.UpdateSelection}">
+        <ListView.ItemTemplate>
+            <DataTemplate x:DataType="x:String">
+                <TextBlock Text="{x:Bind}" />
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</UserControl>

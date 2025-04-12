@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Application
+    x:Class="WAMFF.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WAMFF">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
+
+                <!-- Other merged dictionaries here -->
+            </ResourceDictionary.MergedDictionaries>
+            <!-- Other app resources here -->
+            <FontFamily x:Key="MaterialSymbolsOutlined">/Assets/Fonts/Material Symbols Outline.ttf#Material Symbols Outlined</FontFamily>
+            <FontFamily x:Key="MaterialSymbolsFilled">/Assets/Fonts/Material Symbols Filled.ttf#Material Symbols</FontFamily>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

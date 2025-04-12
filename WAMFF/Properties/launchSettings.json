@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "WAMFF (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "WAMFF (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
