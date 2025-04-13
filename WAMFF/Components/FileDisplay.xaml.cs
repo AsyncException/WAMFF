@@ -25,6 +25,5 @@ public partial class FileDisplay : UserControl
 
     public FileDisplay() {
         this.InitializeComponent();
-        VSCodeFlyout.Visibility = ConfigurationProvider.CurrentConfig.IsVSCodeInstalled ? Visibility.Visible : Visibility.Collapsed;
     }
 }

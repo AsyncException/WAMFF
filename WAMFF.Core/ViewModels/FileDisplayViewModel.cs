@@ -3,6 +3,7 @@ using CommunityToolkit.Mvvm.DependencyInjection;
 using CommunityToolkit.Mvvm.Input;
 using CommunityToolkit.Mvvm.Messaging;
 using LiteDB;
+using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Input;
 using System.Collections.ObjectModel;
@@ -26,6 +27,8 @@ public partial class FileDisplayViewModel(CombinedFile file) : ObservableObject
 
     [ObservableProperty]
     public partial Category SelectedCategory { get; set; } = Category.Default;
+
+    public Visibility VSCodeFlyoutVisibility { get; set; } = ConfigurationProvider.CurrentConfig.IsVSCodeInstalled ? Visibility.Visible : Visibility.Collapsed;
 
     #region opening files
 

@@ -47,7 +47,7 @@
                         </MenuFlyoutItem.Icon>
                     </MenuFlyoutItem>
 
-                    <MenuFlyoutItem Text="Open in VSCode" x:Name="VSCodeFlyout" Command="{x:Bind ViewModel.OpenWithVsCodeCommand, Mode=OneWay}">
+                    <MenuFlyoutItem Text="Open in VSCode" Visibility="{x:Bind ViewModel.VSCodeFlyoutVisibility, Mode=OneWay}" Command="{x:Bind ViewModel.OpenWithVsCodeCommand, Mode=OneWay}">
                         <MenuFlyoutItem.Icon>
                             <ImageIcon Source="/Assets/Icons/vscode.png" />
                         </MenuFlyoutItem.Icon>
