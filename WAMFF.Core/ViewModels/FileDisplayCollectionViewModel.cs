@@ -16,6 +16,8 @@ public partial class FileDisplayCollectionViewModel : ObservableObject
     private List<string> f_SelectedTags = [];
     private List<FileDisplayViewModel> f_BackingFiles = StrongReferenceMessenger.Default.Send(new FilesRequestMessage()).Response.Select(e => new FileDisplayViewModel(e)).ToList();
 
+    public CollectionSorter Sorter { get; set; } = new();
+
     public ObservableCollection<FileDisplayViewModel> FileDisplayViewModels { get; set; } = [];
 
     public FileDisplayCollectionViewModel() {
@@ -36,6 +38,10 @@ public partial class FileDisplayCollectionViewModel : ObservableObject
 
         StrongReferenceMessenger.Default.Register<FileDisplayCollectionViewModel, TagsChangedMessage>(this, static (r, m) => {
             r.f_SelectedTags = m.Value;
+            r.ApplyFilters();
+        });
+
+        StrongReferenceMessenger.Default.Register<FileDisplayCollectionViewModel, SortChangedMessage>(this, static (r, m) => {
             r.ApplyFilters();
         });
 
@@ -68,6 +74,7 @@ public partial class FileDisplayCollectionViewModel : ObservableObject
             files = files.Where(e => f_SelectedTags.All(t => e.File.Stats.Tags.Contains(t)));
         }
 
+        files = Sorter.SortList(files);
 
         FileDisplayViewModels.Replace(files);
 
