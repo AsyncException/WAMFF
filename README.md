@@ -30,7 +30,7 @@ Coming soon...
 - 🖱️ UX: Simple and intuitive interface with mouse and keyboard support
 
 ## 🔧 Planned Features
-- Sorting by columns
+- Currently none
 
 ## 📄 License
 MIT License.
