@@ -1,6 +1,8 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using CommunityToolkit.Mvvm.Messaging;
 using WAMFF.Core.Messages;
+using WAMFF.Core.Services;
 
 namespace WAMFF.Core.ViewModels;
 
@@ -33,5 +35,10 @@ public partial class TitleBarViewModel : ObservableObject
             StrongReferenceMessenger.Default.Send(new SearchQueryChangedMessage(SearchQuery));
         }
         catch (TaskCanceledException) { }
+    }
+
+    [RelayCommand]
+    private void OpenSettings() {
+        ProcessStarter.WithOpenWith(ConfigurationProvider.Path);
     }
 }

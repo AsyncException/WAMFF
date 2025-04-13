@@ -6,23 +6,22 @@ namespace WAMFF.Core.Services;
 public static class ConfigurationProvider
 {
 #if DEBUG
-    private static string path = "AppSettings.json";
+    private static string path = System.IO.Path.Combine(AppContext.BaseDirectory, "AppSettings.json");
 #else
-    private static string path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "WAMFF", "AppSettings.json");
+    private static string path = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "WAMFF", "AppSettings.json");
 #endif
-    private static ConfigModel? _currentConfig = null;
 
     public static ConfigModel CurrentConfig {
-        get {
-            return _currentConfig ??= GetConfig();
-        }
+        get => field ??= GetConfig();
         set {
-            if (!value.Equals(_currentConfig)) {
+            if (!value.Equals(field)) {
                 SaveConfig(value);
-                _currentConfig = value;
+                field = value;
             }
         }
-    }
+    } = null!;
+
+    public static string Path => path;
 
     private static ConfigModel GetConfig() {
         ConfigModel? config = null;

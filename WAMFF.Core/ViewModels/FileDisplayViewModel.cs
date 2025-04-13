@@ -38,7 +38,7 @@ public partial class FileDisplayViewModel(CombinedFile file) : ObservableObject
 
     [RelayCommand] public void OpenFile() => ProcessStarter.WithDefault(File.Details);
     [RelayCommand] public void OpenWith() => ProcessStarter.WithOpenWith(File.Details);
-    [RelayCommand] public void OpenWithVsCode() => ProcessStarter.WithVsCode(File.Details, ConfigurationProvider.CurrentConfig);
+    [RelayCommand] public void OpenWithVsCode() => ProcessStarter.WithVsCode(File.Details);
     [RelayCommand] public void OpenInExplorer() => ProcessStarter.ShowInExplorer(File.Details);
     [RelayCommand] public void DeleteItem() => f_FileService.Delete(File.Details);
 
