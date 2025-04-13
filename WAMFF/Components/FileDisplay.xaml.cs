@@ -1,5 +1,6 @@
 ﻿using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
+using WAMFF.Core.Services;
 using WAMFF.Core.ViewModels;
 
 namespace WAMFF.Components;
@@ -24,7 +25,6 @@ public partial class FileDisplay : UserControl
 
     public FileDisplay() {
         this.InitializeComponent();
+        VSCodeFlyout.Visibility = ConfigurationProvider.CurrentConfig.IsVSCodeInstalled ? Visibility.Visible : Visibility.Collapsed;
     }
-
-    
 }

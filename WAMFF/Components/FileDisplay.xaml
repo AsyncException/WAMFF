@@ -34,7 +34,7 @@
             </Grid.ColumnDefinitions>
 
             <Grid.ContextFlyout>
-                <MenuFlyout>
+                <MenuFlyout x:Name="FlyoutMenu">
                     <MenuFlyoutItem Text="Open" Command="{x:Bind ViewModel.OpenFileCommand, Mode=OneWay }">
                         <MenuFlyoutItem.Icon>
                             <FontIcon Glyph="&#xeaf3;" FontFamily="{StaticResource MaterialSymbolsFilled}" />
@@ -47,7 +47,7 @@
                         </MenuFlyoutItem.Icon>
                     </MenuFlyoutItem>
 
-                    <MenuFlyoutItem Text="Open in VSCode" Command="{x:Bind ViewModel.OpenWithVsCodeCommand, Mode=OneWay}">
+                    <MenuFlyoutItem Text="Open in VSCode" x:Name="VSCodeFlyout" Command="{x:Bind ViewModel.OpenWithVsCodeCommand, Mode=OneWay}">
                         <MenuFlyoutItem.Icon>
                             <ImageIcon Source="/Assets/Icons/vscode.png" />
                         </MenuFlyoutItem.Icon>
