@@ -2,7 +2,7 @@
 
 namespace WAMFF.Core.Models;
 
-public class ConfigModel 
+public class ConfigModel : IEquatable<ConfigModel>
 {
     public List<string> DirectoryPath { get; set; } = [];
     public bool IsVSCodeInstalled { get; set; } = false;
@@ -20,10 +20,31 @@ public class ConfigModel
             VSCodePath = vs_code_path
         };
     }
+
+    public bool Equals(ConfigModel? other) {
+        if (other is null) return false;
+        if (ReferenceEquals(this, other)) return true;
+
+        return IsVSCodeInstalled == other.IsVSCodeInstalled &&
+               VSCodePath == other.VSCodePath &&
+               DirectoryPath.SequenceEqual(other.DirectoryPath);
+    }
+
+    public override bool Equals(object? obj) {
+        return Equals(obj as ConfigModel);
+    }
+
+    public override int GetHashCode() {
+        HashCode hash = new();
+        hash.Add(IsVSCodeInstalled);
+        hash.Add(VSCodePath);
+        foreach (string path in DirectoryPath) {
+            hash.Add(path);
+        }
+        return hash.ToHashCode();
+    }
 }
 
 [JsonSourceGenerationOptions(WriteIndented = true)]
 [JsonSerializable(typeof(ConfigModel))]
-public partial class ConfigModelContext : JsonSerializerContext {
-
-}
+public partial class ConfigModelContext : JsonSerializerContext;
