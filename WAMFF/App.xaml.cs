@@ -59,7 +59,7 @@ namespace WAMFF
             string directory_path = AppContext.BaseDirectory;
 #else
 
-            string directory_path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "WAMF");
+            string directory_path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "WAMFF");
 #endif
             if (!Directory.Exists(directory_path)) {
                 Directory.CreateDirectory(directory_path);

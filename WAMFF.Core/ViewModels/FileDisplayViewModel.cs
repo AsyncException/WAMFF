@@ -108,9 +108,11 @@ public partial class FileDisplayViewModel(CombinedFile file) : ObservableObject
         }
     }
 
-    public void SuggestionChosen(AutoSuggestBox sender, AutoSuggestBoxSuggestionChosenEventArgs args) {
-        SelectedCategory = ((Category)args.SelectedItem);
-        sender.Text = SelectedCategory.Name;
+    public void CategorySuggestionQuery(AutoSuggestBox sender, AutoSuggestBoxQuerySubmittedEventArgs args) {
+        if(args.ChosenSuggestion is not null) {
+            SelectedCategory = ((Category)args.ChosenSuggestion);
+            sender.Text = SelectedCategory.Name;
+        }
     }
 
     #endregion Changing category

@@ -8,7 +8,7 @@ public static class ConfigurationProvider
 #if DEBUG
     private static string path = "AppSettings.json";
 #else
-    private static string path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "WAMF", "AppSettings.json");
+    private static string path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "WAMFF", "AppSettings.json");
 #endif
     private static ConfigModel? _currentConfig = null;
 

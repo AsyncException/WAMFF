@@ -116,7 +116,7 @@
             <TextBlock Grid.Column="15" Text="{x:Bind ViewModel.File.Details.HumanReadableSize, Mode=OneWay}" VerticalAlignment="Center" Margin="10 0 0 0" />
         </Grid>
 
-        <ContentDialog x:Name="RenameDialog" PrimaryButtonText="Accept" CloseButtonText="Cancel" Title="Change category">
+        <ContentDialog x:Name="RenameDialog" PrimaryButtonText="Accept" CloseButtonText="Cancel" Title="Rename file">
             <StackPanel>
                 <TextBox Text="{x:Bind ViewModel.RenameText, Mode=TwoWay}" />
             </StackPanel>
@@ -124,11 +124,11 @@
 
         <ContentDialog x:Name="CategoryDialog" PrimaryButtonText="Accept" CloseButtonText="Cancel" Title="Change category">
             <StackPanel>
-                <AutoSuggestBox Text="{x:Bind ViewModel.Category.Name, Mode=OneWay}" TextChanged="{x:Bind ViewModel.UpdateSuggestionBox, Mode=OneWay}" QuerySubmitted="{x:Bind ViewModel.TagSuggestionQuery, Mode=OneWay}" />
+                <AutoSuggestBox Text="{x:Bind ViewModel.Category.Name, Mode=OneWay}" TextChanged="{x:Bind ViewModel.UpdateSuggestionBox, Mode=OneWay}" QuerySubmitted="{x:Bind ViewModel.CategorySuggestionQuery, Mode=OneWay}" />
             </StackPanel>
         </ContentDialog>
 
-        <ContentDialog x:Name="TagsDialog" PrimaryButtonText="Save" CloseButtonText="Cancel" Title="Change category">
+        <ContentDialog x:Name="TagsDialog" PrimaryButtonText="Save" CloseButtonText="Cancel" Title="Change tags">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto" />
