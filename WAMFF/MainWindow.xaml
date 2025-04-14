@@ -41,9 +41,7 @@
             </Border>
 
             <Border Grid.Column="3" Grid.RowSpan="3" BorderBrush="#1cffffff" BorderThickness="2" CornerRadius="10" Padding="10" Background="#aa0c0c0e" AllowDrop="True" DragOver="{x:Bind ViewModel.CanDrop }" Drop="{x:Bind ViewModel.FileDropped}">
-                <Viewbox VerticalAlignment="Top">
-                    <components:FileDisplayColletion />
-                </Viewbox>
+                <components:FileDisplayColletion />
             </Border>
         </Grid>
     </Grid>
