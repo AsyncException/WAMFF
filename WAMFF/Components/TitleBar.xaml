@@ -26,10 +26,10 @@
                 <ColumnDefinition Width="140" />
             </Grid.ColumnDefinitions>
 
-            <Image Source="/Assets/StoreLogo.png" Grid.Column="1" Width="48" Height="48" Margin="8,0,4,0" />
+            <Image Source="/Assets/StoreLogo.png" Grid.Column="1" Width="auto" Height="auto" Margin="8,0,4,0" />
             <TextBlock Text="Where are my files!" Style="{StaticResource CaptionTextBlockStyle}" Grid.Column="2" VerticalAlignment="Center" />
             <TextBox x:Name="SearchBox" Text="{x:Bind ViewModel.SearchQuery, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Column="4" PlaceholderText="Search" VerticalAlignment="Center" MaxWidth="600" Background="#aa0c0c0e" />
-            <Button Grid.Column="6" Command="{x:Bind ViewModel.OpenSettingsCommand}" >
+            <Button Grid.Column="6" Command="{x:Bind ViewModel.OpenSettingsCommand}" Margin="0 1 0 1" >
                 <FontIcon Glyph="&#xe8b8;" FontFamily="{StaticResource MaterialSymbolsFilled}" />
             </Button>
 

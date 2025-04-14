@@ -85,7 +85,7 @@
             </Grid.ContextFlyout>
 
             <Image Grid.Column="0" Source="{x:Bind ViewModel.File.Details.FileIcon, Mode=OneWay}" Width="45" Height="45" VerticalAlignment="Center" />
-            <TextBlock Grid.Column="1" Text="{x:Bind ViewModel.File.Details.Name, Mode=OneWay}" VerticalAlignment="Center" Margin="10 0 0 0" />
+            <TextBlock Grid.Column="1" Text="{x:Bind ViewModel.File.Details.Name, Mode=OneWay}" VerticalAlignment="Center" Margin="10 0 10 0" />
 
             <AppBarSeparator Grid.Column="2" />
             
