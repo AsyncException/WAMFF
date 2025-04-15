@@ -9,7 +9,7 @@
     mc:Ignorable="d"
     Title="WAMFF">
 
-    <Grid Name="MainGrid" Background="#25FFFFFF">
+    <Grid Name="MainGrid" Background="Transparent">
         <Grid.RowDefinitions>
             <RowDefinition Height="35" />
             <RowDefinition Height="*" />

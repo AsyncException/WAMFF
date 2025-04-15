@@ -8,7 +8,7 @@ namespace WAMFF.Utilities;
 
 public class BackDropController
 {
-    private readonly DesktopAcrylicController m_backdropController = new() { TintColor = Color.FromArgb(100, 0, 0, 0) };
+    private readonly DesktopAcrylicController m_backdropController = new() { TintColor = Color.FromArgb(0, 0, 0, 0), TintOpacity = 0, LuminosityOpacity = 0 };
     private readonly SystemBackdropConfiguration m_configurationSource = new() { IsInputActive = true, Theme = SystemBackdropTheme.Dark };
 
     private Window? m_window;

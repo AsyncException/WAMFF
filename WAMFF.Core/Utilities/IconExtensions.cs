@@ -13,5 +13,7 @@ public static class IconExtensions
         stream.Position = 0;
         bitmapImage.SetSource(stream.AsRandomAccessStream());
         return bitmapImage;
+
+        
     }
 }
