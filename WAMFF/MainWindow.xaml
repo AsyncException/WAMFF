@@ -11,7 +11,7 @@
 
     <Grid Name="MainGrid" Background="Transparent">
         <Grid.Resources>
-            <Style TargetType="Border">
+            <Style TargetType="Border" x:Key="ContainerStyle">
                 <Setter Property="BorderBrush" Value="#1cffffff" />
                 <Setter Property="BorderThickness" Value="2" />
                 <Setter Property="CornerRadius" Value="10" />
@@ -42,15 +42,15 @@
                 <RowDefinition Height="15" />
             </Grid.RowDefinitions>
 
-            <Border Grid.Column="1" Grid.Row="0">
+            <Border Grid.Column="1" Grid.Row="0" Style="{StaticResource ContainerStyle}">
                 <components:CategoryDisplayCollection />
             </Border>
 
-            <Border Grid.Column="1" Grid.Row="2">
+            <Border Grid.Column="1" Grid.Row="2" Style="{StaticResource ContainerStyle}">
                 <components:TagDisplayCollection />
             </Border>
 
-            <Border Grid.Column="3" Grid.RowSpan="3" AllowDrop="True" DragOver="{x:Bind ViewModel.CanDrop }" Drop="{x:Bind ViewModel.FileDropped}">
+            <Border Grid.Column="3" Grid.RowSpan="3" AllowDrop="True" DragOver="{x:Bind ViewModel.CanDrop }" Drop="{x:Bind ViewModel.FileDropped}" Style="{StaticResource ContainerStyle}">
                 <components:FileDisplayColletion />
             </Border>
         </Grid>
