@@ -10,6 +10,16 @@
     Title="WAMFF">
 
     <Grid Name="MainGrid" Background="Transparent">
+        <Grid.Resources>
+            <Style TargetType="Border">
+                <Setter Property="BorderBrush" Value="#1cffffff" />
+                <Setter Property="BorderThickness" Value="2" />
+                <Setter Property="CornerRadius" Value="10" />
+                <Setter Property="Padding" Value="10" />
+                <Setter Property="Background" Value="#aa0c0c0e" />
+            </Style>
+        </Grid.Resources>
+        
         <Grid.RowDefinitions>
             <RowDefinition Height="35" />
             <RowDefinition Height="*" />
@@ -20,7 +30,7 @@
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="15" />
-                <ColumnDefinition Width="300" />
+                <ColumnDefinition Width="250" />
                 <ColumnDefinition Width="15" />
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="15" />
@@ -32,15 +42,15 @@
                 <RowDefinition Height="15" />
             </Grid.RowDefinitions>
 
-            <Border Grid.Column="1" Grid.Row="0" BorderBrush="#1cffffff" BorderThickness="2" CornerRadius="10" Padding="10" Background="#aa0c0c0e">
+            <Border Grid.Column="1" Grid.Row="0">
                 <components:CategoryDisplayCollection />
             </Border>
 
-            <Border Grid.Column="1" Grid.Row="2" BorderBrush="#1cffffff" BorderThickness="2" CornerRadius="10" Padding="10" Background="#aa0c0c0e">
+            <Border Grid.Column="1" Grid.Row="2">
                 <components:TagDisplayCollection />
             </Border>
 
-            <Border Grid.Column="3" Grid.RowSpan="3" BorderBrush="#1cffffff" BorderThickness="2" CornerRadius="10" Padding="10" Background="#aa0c0c0e" AllowDrop="True" DragOver="{x:Bind ViewModel.CanDrop }" Drop="{x:Bind ViewModel.FileDropped}">
+            <Border Grid.Column="3" Grid.RowSpan="3" AllowDrop="True" DragOver="{x:Bind ViewModel.CanDrop }" Drop="{x:Bind ViewModel.FileDropped}">
                 <components:FileDisplayColletion />
             </Border>
         </Grid>

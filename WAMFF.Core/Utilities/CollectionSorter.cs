@@ -8,9 +8,9 @@ using WAMFF.Core.ViewModels;
 namespace WAMFF.Core.Utilities;
 public partial class CollectionSorter : ObservableObject
 {
-    private const string SORT_ASC = "\xe5d8";
-    private const string SORT_DESC = "\xe5db";
-    private const string NO_SORT = "\xe164";
+    private const string SORT_ASC = "\uE74A";
+    private const string SORT_DESC = "\uE74B";
+    private const string NO_SORT = "\uE8CB";
 
     private string f_CurrentSelected = nameof(NameIcon);
     [ObservableProperty] public partial string NameIcon { get; set; } = SORT_ASC;

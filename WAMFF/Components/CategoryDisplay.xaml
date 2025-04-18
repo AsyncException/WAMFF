@@ -11,7 +11,7 @@
     mc:Ignorable="d">
 
     <StackPanel Orientation="Horizontal" Background="Transparent">
-        <FontIcon Glyph="&#xe866;" FontFamily="{StaticResource MaterialSymbolsOutlined}" Foreground="{x:Bind converters:HexConverter.ConvertHex(ViewModel.Category.Color), Mode=OneWay}" />
+        <FontIcon Glyph="&#xE8EC;" Foreground="{x:Bind converters:HexConverter.ConvertHex(ViewModel.Category.Color), Mode=OneWay}" Margin="0 0 10 0"/>
         <TextBlock Text="{x:Bind ViewModel.Category.Name, Mode=OneWay}" />
 
         <ContentDialog x:Name="DeleteDialog" PrimaryButtonText="Delete" CloseButtonText="Cancel" Title="Create category">

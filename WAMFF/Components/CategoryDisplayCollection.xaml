@@ -22,7 +22,7 @@
 
         <Button HorizontalAlignment="Stretch" Grid.Row="0" Command="{x:Bind ViewModel.CreateNewCategoryCommand}">
             <StackPanel Orientation="Horizontal" Background="Transparent">
-                <FontIcon Glyph="&#xe598;" FontFamily="{StaticResource MaterialSymbolsOutlined}" Foreground="{ThemeResource AccentAAFillColorDefaultBrush}" />
+                <FontIcon Glyph="&#xE8EC;" Foreground="{ThemeResource AccentAAFillColorDefaultBrush}" Margin="0 0 10 0" />
                 <TextBlock Text="New category" />
             </StackPanel>
         </Button>

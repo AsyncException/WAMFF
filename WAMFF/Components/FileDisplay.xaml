@@ -39,14 +39,14 @@
             <AppBarSeparator Grid.Column="2" />
 
             <Button Grid.Column="3" Command="{x:Bind ViewModel.ShowCategoryDialogCommand, Mode=OneWay}" Margin="10 0 10 0" HorizontalAlignment="Stretch" Padding="0 2">
-                <FontIcon Glyph="&#xe866;" FontFamily="{StaticResource MaterialSymbolsFilled}" Foreground="{x:Bind converters:HexConverter.ConvertHex(ViewModel.Category.Color), Mode=OneWay}" />
+                <FontIcon Glyph="&#xE8EC;" Foreground="{x:Bind converters:HexConverter.ConvertHex(ViewModel.Category.Color), Mode=OneWay}" />
             </Button>
 
             <AppBarSeparator Grid.Column="4" />
 
             <Button Grid.Column="5" Margin="10 0 10 0" Command="{x:Bind ViewModel.ShowTagsDialogCommand, Mode=OneWay}" HorizontalAlignment="Stretch" Padding="0 2">
                 <StackPanel Orientation="Horizontal">
-                    <FontIcon Glyph="&#xefb7;" FontFamily="{StaticResource MaterialSymbolsFilled}" Foreground="{ThemeResource AccentAAFillColorDefaultBrush}" />
+                    <FontIcon Glyph="&#xE8A4;" Foreground="{ThemeResource AccentAAFillColorDefaultBrush}" />
                     <TextBlock  Text="{x:Bind ViewModel.File.Stats.Tags.Count, Mode=OneWay}" VerticalAlignment="Center" Margin="10 0 0 0" />
                 </StackPanel>
             </Button>
@@ -70,13 +70,13 @@
                 <MenuFlyout x:Name="FlyoutMenu">
                     <MenuFlyoutItem Text="Open" Command="{x:Bind ViewModel.OpenFileCommand, Mode=OneWay }">
                         <MenuFlyoutItem.Icon>
-                            <FontIcon Glyph="&#xeaf3;" FontFamily="{StaticResource MaterialSymbolsFilled}" />
+                            <FontIcon Glyph="&#xE8E5;" />
                         </MenuFlyoutItem.Icon>
                     </MenuFlyoutItem>
 
                     <MenuFlyoutItem Text="Open with" Command="{x:Bind ViewModel.OpenWithCommand, Mode=OneWay}">
                         <MenuFlyoutItem.Icon>
-                            <FontIcon Glyph="&#xe89f;" FontFamily="{StaticResource MaterialSymbolsFilled}" />
+                            <FontIcon Glyph="&#xE7AC;" />
                         </MenuFlyoutItem.Icon>
                     </MenuFlyoutItem>
 
@@ -88,21 +88,15 @@
 
                     <MenuFlyoutItem Text="Show in Explorer" Command="{x:Bind ViewModel.OpenInExplorerCommand, Mode=OneWay}">
                         <MenuFlyoutItem.Icon>
-                            <FontIcon Glyph="&#xe2c8;" FontFamily="{StaticResource MaterialSymbolsFilled}" />
+                            <FontIcon Glyph="&#xE8DA;" />
                         </MenuFlyoutItem.Icon>
                     </MenuFlyoutItem>
 
                     <MenuFlyoutSeparator />
 
-                    <MenuFlyoutItem Text="Change Category" Command="{x:Bind ViewModel.ShowCategoryDialogCommand, Mode=OneWay}">
-                        <MenuFlyoutItem.Icon>
-                            <FontIcon Glyph="&#xe866;" FontFamily="{StaticResource MaterialSymbolsFilled}" />
-                        </MenuFlyoutItem.Icon>
-                    </MenuFlyoutItem>
-
                     <MenuFlyoutItem Text="Rename" Command="{x:Bind ViewModel.ShowRenameDialogCommand, Mode=OneWay}">
                         <MenuFlyoutItem.Icon>
-                            <FontIcon Glyph="&#xe3c9;" FontFamily="{StaticResource MaterialSymbolsFilled}" />
+                            <FontIcon Glyph="&#xE8AC;" />
                         </MenuFlyoutItem.Icon>
                     </MenuFlyoutItem>
 
@@ -110,7 +104,7 @@
 
                     <MenuFlyoutItem Text="Delete" Command="{x:Bind ViewModel.ShowDeleteDialogCommand, Mode=OneWay}" Background="Red">
                         <MenuFlyoutItem.Icon>
-                            <FontIcon Glyph="&#xe872;" FontFamily="{StaticResource MaterialSymbolsFilled}"/>
+                            <FontIcon Glyph="&#xE74D;" />
                         </MenuFlyoutItem.Icon>
                     </MenuFlyoutItem>
 
@@ -150,7 +144,7 @@
 
                                 <TextBlock Grid.Column="0" Text="{x:Bind Tag, Mode=OneWay}" VerticalAlignment="Center" />
                                 <Button Grid.Column="1" Command="{x:Bind RemoveTagCommand, Mode=OneWay}" HorizontalAlignment="Right">
-                                    <FontIcon Glyph="&#xe872;" FontFamily="{StaticResource MaterialSymbolsFilled}" Foreground="{ThemeResource AccentAAFillColorDefaultBrush}" />
+                                    <FontIcon Glyph="&#xE74D;" />
                                 </Button>
 
                             </Grid>
