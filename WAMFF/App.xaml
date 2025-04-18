@@ -8,12 +8,18 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
-
-                <!-- Other merged dictionaries here -->
             </ResourceDictionary.MergedDictionaries>
-            <!-- Other app resources here -->
+            
             <FontFamily x:Key="MaterialSymbolsOutlined">/Assets/Fonts/Material Symbols Outline.ttf#Material Symbols Outlined</FontFamily>
             <FontFamily x:Key="MaterialSymbolsFilled">/Assets/Fonts/Material Symbols Filled.ttf#Material Symbols</FontFamily>
+
+            <Style TargetType="TextBlock">
+                <Setter Property="FontSize" Value="14" />
+            </Style>
+
+            <Style TargetType="FontIcon">
+                <Setter Property="FontSize" Value="20" />
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

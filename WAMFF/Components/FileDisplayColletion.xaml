@@ -23,93 +23,93 @@
         <Grid Height="45" Grid.Row="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="15" />
-                <ColumnDefinition Width="45" />
-                <ColumnDefinition Width="7*" />
+                <ColumnDefinition Width="30" />
+                <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="auto" />
-                <ColumnDefinition Width="130" />
+                <ColumnDefinition Width="110" />
                 <ColumnDefinition Width="auto" />
-                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="85" />
                 <ColumnDefinition Width="auto" />
                 <ColumnDefinition Width="200" />
                 <ColumnDefinition Width="auto" />
-                <ColumnDefinition Width="130" />
+                <ColumnDefinition Width="80" />
                 <ColumnDefinition Width="auto" />
-                <ColumnDefinition Width="160" />
+                <ColumnDefinition Width="140" />
                 <ColumnDefinition Width="auto" />
-                <ColumnDefinition Width="160" />
+                <ColumnDefinition Width="140" />
                 <ColumnDefinition Width="auto" />
-                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="80" />
                 <ColumnDefinition Width="13" />
             </Grid.ColumnDefinitions>
-
-            <Button Grid.Column="2" Command="{x:Bind ViewModel.Sorter.SortByNameCommand}" Margin="10 0 10 0" HorizontalAlignment="Stretch" HorizontalContentAlignment="Left" Background="Transparent" BorderBrush="Transparent">
+            
+            <Button Grid.Column="2" Command="{x:Bind ViewModel.Sorter.SortByNameCommand}" Padding="5 0" Margin="10 0 10 0" HorizontalAlignment="Stretch" HorizontalContentAlignment="Left" Background="Transparent" BorderBrush="Transparent">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Name" VerticalAlignment="Center" Margin="0 0 10 0" />
-                    <FontIcon Glyph="{x:Bind ViewModel.Sorter.NameIcon, Mode=OneWay}" FontFamily="{StaticResource MaterialSymbolsFilled}" />
+                    <FontIcon Glyph="{x:Bind ViewModel.Sorter.NameIcon, Mode=OneWay}" FontFamily="{StaticResource MaterialSymbolsFilled}" FontSize="15" />
                 </StackPanel>
             </Button>
 
             <AppBarSeparator Grid.Column="3" />
 
-            <Button Grid.Column="4" Command="{x:Bind ViewModel.Sorter.SortByCategoryCommand}" Margin="10 0 10 0" HorizontalAlignment="Stretch" HorizontalContentAlignment="Left" Background="Transparent" BorderBrush="Transparent">
+            <Button Grid.Column="4" Command="{x:Bind ViewModel.Sorter.SortByCategoryCommand}" Padding="5 0" Margin="10 0 10 0" HorizontalAlignment="Stretch" HorizontalContentAlignment="Left" Background="Transparent" BorderBrush="Transparent">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Category" VerticalAlignment="Center" Margin="00 0 10 0" />
-                    <FontIcon Glyph="{x:Bind ViewModel.Sorter.CategoryIcon, Mode=OneWay}" FontFamily="{StaticResource MaterialSymbolsFilled}" />
+                    <FontIcon Glyph="{x:Bind ViewModel.Sorter.CategoryIcon, Mode=OneWay}" FontFamily="{StaticResource MaterialSymbolsFilled}" FontSize="15" />
                 </StackPanel>
             </Button>
 
             <AppBarSeparator Grid.Column="5" />
 
-            <Button Grid.Column="6" Command="{x:Bind ViewModel.Sorter.SortByTagsCommand}" Margin="10 0 10 0" HorizontalAlignment="Stretch" HorizontalContentAlignment="Left" Background="Transparent" BorderBrush="Transparent">
+            <Button Grid.Column="6" Command="{x:Bind ViewModel.Sorter.SortByTagsCommand}" Padding="5 0" Margin="10 0 10 0" HorizontalAlignment="Stretch" HorizontalContentAlignment="Left" Background="Transparent" BorderBrush="Transparent">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Tags" VerticalAlignment="Center" Margin="0 0 10 0" />
-                    <FontIcon Glyph="{x:Bind ViewModel.Sorter.TagsIcon, Mode=OneWay}" FontFamily="{StaticResource MaterialSymbolsFilled}" />
+                    <FontIcon Glyph="{x:Bind ViewModel.Sorter.TagsIcon, Mode=OneWay}" FontFamily="{StaticResource MaterialSymbolsFilled}" FontSize="15" />
                 </StackPanel>
             </Button>
 
             <AppBarSeparator Grid.Column="7" />
 
-            <Button Grid.Column="8" Command="{x:Bind ViewModel.Sorter.SortByTypeCommand}" Margin="10 0 10 0" HorizontalAlignment="Stretch" HorizontalContentAlignment="Left" Background="Transparent" BorderBrush="Transparent">
+            <Button Grid.Column="8" Command="{x:Bind ViewModel.Sorter.SortByTypeCommand}" Padding="5 0" Margin="10 0 10 0" HorizontalAlignment="Stretch" HorizontalContentAlignment="Left" Background="Transparent" BorderBrush="Transparent">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Type" VerticalAlignment="Center" Margin="0 0 10 0" />
-                    <FontIcon Glyph="{x:Bind ViewModel.Sorter.TypeIcon, Mode=OneWay}" FontFamily="{StaticResource MaterialSymbolsFilled}" />
+                    <FontIcon Glyph="{x:Bind ViewModel.Sorter.TypeIcon, Mode=OneWay}" FontFamily="{StaticResource MaterialSymbolsFilled}" FontSize="15" />
                 </StackPanel>
             </Button>
             
             <AppBarSeparator Grid.Column="9" />
 
-            <Button Grid.Column="10" Command="{x:Bind ViewModel.Sorter.SortByExtensionCommand}" Margin="10 0 10 0" HorizontalAlignment="Stretch" HorizontalContentAlignment="Left" Background="Transparent" BorderBrush="Transparent">
+            <Button Grid.Column="10" Command="{x:Bind ViewModel.Sorter.SortByExtensionCommand}" Padding="5 0" Margin="10 0 10 0" HorizontalAlignment="Stretch" HorizontalContentAlignment="Left" Background="Transparent" BorderBrush="Transparent">
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Extension" VerticalAlignment="Center" Margin="0 0 10 0" />
-                    <FontIcon Glyph="{x:Bind ViewModel.Sorter.ExtensionIcon, Mode=OneWay}" FontFamily="{StaticResource MaterialSymbolsFilled}" />
+                    <TextBlock Text="Ext" VerticalAlignment="Center" Margin="0 0 10 0" />
+                    <FontIcon Glyph="{x:Bind ViewModel.Sorter.ExtensionIcon, Mode=OneWay}" FontFamily="{StaticResource MaterialSymbolsFilled}" FontSize="15" />
                 </StackPanel>
             </Button>
 
             <AppBarSeparator Grid.Column="11" />
 
-            <Button Grid.Column="12" Command="{x:Bind ViewModel.Sorter.SortByCreatedDateCommand}" Margin="10 0 10 0" HorizontalAlignment="Stretch" HorizontalContentAlignment="Left" Background="Transparent" BorderBrush="Transparent">
+            <Button Grid.Column="12" Command="{x:Bind ViewModel.Sorter.SortByCreatedDateCommand}" Padding="5 0" Margin="10 0 10 0" HorizontalAlignment="Stretch" HorizontalContentAlignment="Left" Background="Transparent" BorderBrush="Transparent">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Created date" VerticalAlignment="Center" Margin="0 0 10 0" />
-                    <FontIcon Glyph="{x:Bind ViewModel.Sorter.CreatedDateIcon, Mode=OneWay}" FontFamily="{StaticResource MaterialSymbolsFilled}" />
+                    <FontIcon Glyph="{x:Bind ViewModel.Sorter.CreatedDateIcon, Mode=OneWay}" FontFamily="{StaticResource MaterialSymbolsFilled}" FontSize="15" />
                 </StackPanel>
             </Button>
             
 
             <AppBarSeparator Grid.Column="13" />
 
-            <Button Grid.Column="14" Command="{x:Bind ViewModel.Sorter.SortByLastModifiedDateCommand}" Margin="10 0 10 0" HorizontalAlignment="Stretch" HorizontalContentAlignment="Left" Background="Transparent" BorderBrush="Transparent">
+            <Button Grid.Column="14" Command="{x:Bind ViewModel.Sorter.SortByLastModifiedDateCommand}" Padding="5 0" Margin="10 0 10 0" HorizontalAlignment="Stretch" HorizontalContentAlignment="Left" Background="Transparent" BorderBrush="Transparent">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Last modified" VerticalAlignment="Center" Margin="0 0 10 0" />
-                    <FontIcon Glyph="{x:Bind ViewModel.Sorter.LastModifiedDateIcon, Mode=OneWay}" FontFamily="{StaticResource MaterialSymbolsFilled}" />
+                    <FontIcon Glyph="{x:Bind ViewModel.Sorter.LastModifiedDateIcon, Mode=OneWay}" FontFamily="{StaticResource MaterialSymbolsFilled}" FontSize="15" />
                 </StackPanel>
             </Button>
 
             <AppBarSeparator Grid.Column="15" />
 
-            <Button Grid.Column="16" Command="{x:Bind ViewModel.Sorter.SortBySizeCommand}" Margin="10 0 10 0" HorizontalAlignment="Stretch" HorizontalContentAlignment="Left" Background="Transparent" BorderBrush="Transparent">
+            <Button Grid.Column="16" Command="{x:Bind ViewModel.Sorter.SortBySizeCommand}" Padding="5 0" Margin="10 0 10 0" HorizontalAlignment="Stretch" HorizontalContentAlignment="Left" Background="Transparent" BorderBrush="Transparent">
                 <StackPanel Orientation="Horizontal" >
                     <TextBlock Text="Size" VerticalAlignment="Center" Margin="0 0 10 0" />
-                    <FontIcon Glyph="{x:Bind ViewModel.Sorter.SizeIcon, Mode=OneWay}" FontFamily="{StaticResource MaterialSymbolsFilled}" />
+                    <FontIcon Glyph="{x:Bind ViewModel.Sorter.SizeIcon, Mode=OneWay}" FontFamily="{StaticResource MaterialSymbolsFilled}" FontSize="15" />
                 </StackPanel>
             </Button>
             

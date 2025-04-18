@@ -58,7 +58,13 @@ public class FileDetails
     /// </summary>
     public string FileType { get; set; } = string.Empty;
 
+    /// <summary>
+    /// Human friendly display for <seealso cref="SizeBytes"/>
+    /// </summary>
     public string HumanReadableSize => GetHumanReadableSize();
+
+    public string HumanReadableCreationDate => CreatedDate.ToString("yy-MM-dd hh:mm", null);
+    public string HumanReadableModifiedDate => LastModifiedDate.ToString("yy-MM-dd hh:mm", null);
 
     /// <summary>
     /// Converts the SizeBytes property into a human-readable format (e.g., KB, MB, GB).

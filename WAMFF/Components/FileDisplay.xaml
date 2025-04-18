@@ -13,25 +13,58 @@
     mc:Ignorable="d">
 
     <StackPanel>
-        <Grid Padding="0 10 0 10" DoubleTapped="{x:Bind ViewModel.OpenDoubleTap, Mode=OneWay}" Background="Transparent">
+        <Grid Padding="0 5" DoubleTapped="{x:Bind ViewModel.OpenDoubleTap, Mode=OneWay}" Background="Transparent">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="45" />
-                <ColumnDefinition Width="7*" />
+                <ColumnDefinition Width="30" />
+                <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="auto" />
-                <ColumnDefinition Width="130" />
+                <ColumnDefinition Width="110" />
                 <ColumnDefinition Width="auto" />
-                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="85" />
                 <ColumnDefinition Width="auto" />
                 <ColumnDefinition Width="200" />
                 <ColumnDefinition Width="auto" />
-                <ColumnDefinition Width="130" />
+                <ColumnDefinition Width="80" />
                 <ColumnDefinition Width="auto" />
-                <ColumnDefinition Width="160" />
+                <ColumnDefinition Width="140" />
                 <ColumnDefinition Width="auto" />
-                <ColumnDefinition Width="160" />
+                <ColumnDefinition Width="140" />
                 <ColumnDefinition Width="auto" />
-                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="80" />
             </Grid.ColumnDefinitions>
+
+            <Image Grid.Column="0" Source="{x:Bind ViewModel.File.Details.FileIcon, Mode=OneWay}" Width="30" Height="30" VerticalAlignment="Center" />
+            <TextBlock Grid.Column="1" Text="{x:Bind ViewModel.File.Details.Name, Mode=OneWay}" VerticalAlignment="Center" Margin="10 0 10 0" TextTrimming="CharacterEllipsis" />
+
+            <AppBarSeparator Grid.Column="2" />
+
+            <Button Grid.Column="3" Command="{x:Bind ViewModel.ShowCategoryDialogCommand, Mode=OneWay}" Margin="10 0 10 0" HorizontalAlignment="Stretch" Padding="0 2">
+                <FontIcon Glyph="&#xe866;" FontFamily="{StaticResource MaterialSymbolsFilled}" Foreground="{x:Bind converters:HexConverter.ConvertHex(ViewModel.Category.Color), Mode=OneWay}" />
+            </Button>
+
+            <AppBarSeparator Grid.Column="4" />
+
+            <Button Grid.Column="5" Margin="10 0 10 0" Command="{x:Bind ViewModel.ShowTagsDialogCommand, Mode=OneWay}" HorizontalAlignment="Stretch" Padding="0 2">
+                <StackPanel Orientation="Horizontal">
+                    <FontIcon Glyph="&#xefb7;" FontFamily="{StaticResource MaterialSymbolsFilled}" Foreground="{ThemeResource AccentAAFillColorDefaultBrush}" />
+                    <TextBlock  Text="{x:Bind ViewModel.File.Stats.Tags.Count, Mode=OneWay}" VerticalAlignment="Center" Margin="10 0 0 0" />
+                </StackPanel>
+            </Button>
+
+            <AppBarSeparator Grid.Column="6" />
+            <TextBlock Grid.Column="7" Text="{x:Bind ViewModel.File.Details.FileType, Mode=OneWay}" VerticalAlignment="Center" Margin="10 0 0 0" TextTrimming="CharacterEllipsis" />
+
+            <AppBarSeparator Grid.Column="8" />
+            <TextBlock Grid.Column="9" Text="{x:Bind ViewModel.File.Details.Extension, Mode=OneWay}" VerticalAlignment="Center" Margin="10 0 0 0" />
+
+            <AppBarSeparator Grid.Column="10" />
+            <TextBlock Grid.Column="11" Text="{x:Bind ViewModel.File.Details.HumanReadableCreationDate, Mode=OneWay}" VerticalAlignment="Center" Margin="10 0 0 0" />
+
+            <AppBarSeparator Grid.Column="12" />
+            <TextBlock Grid.Column="13" Text="{x:Bind ViewModel.File.Details.HumanReadableModifiedDate, Mode=OneWay}" VerticalAlignment="Center" Margin="10 0 0 0" />
+
+            <AppBarSeparator Grid.Column="14" />
+            <TextBlock Grid.Column="15" Text="{x:Bind ViewModel.File.Details.HumanReadableSize, Mode=OneWay}" VerticalAlignment="Center" Margin="10 0 0 0" />
 
             <Grid.ContextFlyout>
                 <MenuFlyout x:Name="FlyoutMenu">
@@ -58,9 +91,9 @@
                             <FontIcon Glyph="&#xe2c8;" FontFamily="{StaticResource MaterialSymbolsFilled}" />
                         </MenuFlyoutItem.Icon>
                     </MenuFlyoutItem>
-                    
+
                     <MenuFlyoutSeparator />
-                    
+
                     <MenuFlyoutItem Text="Change Category" Command="{x:Bind ViewModel.ShowCategoryDialogCommand, Mode=OneWay}">
                         <MenuFlyoutItem.Icon>
                             <FontIcon Glyph="&#xe866;" FontFamily="{StaticResource MaterialSymbolsFilled}" />
@@ -72,50 +105,17 @@
                             <FontIcon Glyph="&#xe3c9;" FontFamily="{StaticResource MaterialSymbolsFilled}" />
                         </MenuFlyoutItem.Icon>
                     </MenuFlyoutItem>
-                    
+
                     <MenuFlyoutSeparator />
-                    
+
                     <MenuFlyoutItem Text="Delete" Command="{x:Bind ViewModel.ShowDeleteDialogCommand, Mode=OneWay}" Background="Red">
                         <MenuFlyoutItem.Icon>
                             <FontIcon Glyph="&#xe872;" FontFamily="{StaticResource MaterialSymbolsFilled}"/>
                         </MenuFlyoutItem.Icon>
                     </MenuFlyoutItem>
-                    
+
                 </MenuFlyout>
             </Grid.ContextFlyout>
-
-            <Image Grid.Column="0" Source="{x:Bind ViewModel.File.Details.FileIcon, Mode=OneWay}" Width="45" Height="45" VerticalAlignment="Center" />
-            <TextBlock Grid.Column="1" Text="{x:Bind ViewModel.File.Details.Name, Mode=OneWay}" VerticalAlignment="Center" Margin="10 0 10 0" />
-
-            <AppBarSeparator Grid.Column="2" />
-            
-            <Button Grid.Column="3"  Command="{x:Bind ViewModel.ShowCategoryDialogCommand, Mode=OneWay}" Margin="10 0 10 0" HorizontalAlignment="Stretch">
-                <FontIcon Glyph="&#xe866;" FontSize="25" FontFamily="{StaticResource MaterialSymbolsFilled}" Foreground="{x:Bind converters:HexConverter.ConvertHex(ViewModel.Category.Color), Mode=OneWay}"  />
-            </Button>
-
-            <AppBarSeparator Grid.Column="4" />
-            
-            <Button Grid.Column="5" Margin="10 0 10 0" Command="{x:Bind ViewModel.ShowTagsDialogCommand, Mode=OneWay}" HorizontalAlignment="Stretch">
-                <StackPanel Orientation="Horizontal">
-                    <FontIcon Glyph="&#xefb7;" FontSize="25" FontFamily="{StaticResource MaterialSymbolsFilled}" Foreground="{ThemeResource AccentAAFillColorDefaultBrush}" />
-                    <TextBlock  Text="{x:Bind ViewModel.File.Stats.Tags.Count, Mode=OneWay}" VerticalAlignment="Center" Margin="10 0 0 0" />
-                </StackPanel>
-            </Button>
-
-            <AppBarSeparator Grid.Column="6" />
-            <TextBlock Grid.Column="7" Text="{x:Bind ViewModel.File.Details.FileType, Mode=OneWay}" VerticalAlignment="Center" Margin="10 0 0 0" />
-
-            <AppBarSeparator Grid.Column="8" />
-            <TextBlock Grid.Column="9" Text="{x:Bind ViewModel.File.Details.Extension, Mode=OneWay}" VerticalAlignment="Center" Margin="10 0 0 0" />
-
-            <AppBarSeparator Grid.Column="10" />
-            <TextBlock Grid.Column="11" Text="{x:Bind ViewModel.File.Details.CreatedDate, Mode=OneWay}" VerticalAlignment="Center" Margin="10 0 0 0" />
-
-            <AppBarSeparator Grid.Column="12" />
-            <TextBlock Grid.Column="13" Text="{x:Bind ViewModel.File.Details.LastModifiedDate, Mode=OneWay}" VerticalAlignment="Center" Margin="10 0 0 0" />
-
-            <AppBarSeparator Grid.Column="14" />
-            <TextBlock Grid.Column="15" Text="{x:Bind ViewModel.File.Details.HumanReadableSize, Mode=OneWay}" VerticalAlignment="Center" Margin="10 0 0 0" />
         </Grid>
 
         <ContentDialog x:Name="RenameDialog" PrimaryButtonText="Accept" CloseButtonText="Cancel" Title="Rename file">
