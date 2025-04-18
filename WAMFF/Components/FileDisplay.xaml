@@ -16,13 +16,13 @@
         <Grid Padding="0 5" DoubleTapped="{x:Bind ViewModel.OpenDoubleTap, Mode=OneWay}" Background="Transparent">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="30" />
-                <ColumnDefinition Width="*" />
+                <ColumnDefinition x:Name="NameColumn" Width="*" />
                 <ColumnDefinition Width="auto" />
                 <ColumnDefinition Width="110" />
                 <ColumnDefinition Width="auto" />
                 <ColumnDefinition Width="85" />
                 <ColumnDefinition Width="auto" />
-                <ColumnDefinition Width="200" />
+                <ColumnDefinition x:Name="TypeColumn" Width="200" />
                 <ColumnDefinition Width="auto" />
                 <ColumnDefinition Width="80" />
                 <ColumnDefinition Width="auto" />

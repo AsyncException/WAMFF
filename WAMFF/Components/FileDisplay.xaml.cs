@@ -25,5 +25,14 @@ public partial class FileDisplay : UserControl
 
     public FileDisplay() {
         this.InitializeComponent();
+        this.SizeChanged += Window_SizeChanged;
+    }
+
+    private void Window_SizeChanged(object sender, SizeChangedEventArgs e) {
+        TypeColumn.Width = this.NameColumn switch {
+            { ActualWidth: < 200 } => new GridLength(0),
+            { ActualWidth: > 400 } => new GridLength(200),
+            _ => TypeColumn.Width
+        };
     }
 }

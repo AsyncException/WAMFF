@@ -24,13 +24,13 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="15" />
                 <ColumnDefinition Width="30" />
-                <ColumnDefinition Width="*" />
+                <ColumnDefinition x:Name="NameColumn" Width="*" />
                 <ColumnDefinition Width="auto" />
                 <ColumnDefinition Width="110" />
                 <ColumnDefinition Width="auto" />
                 <ColumnDefinition Width="85" />
                 <ColumnDefinition Width="auto" />
-                <ColumnDefinition Width="200" />
+                <ColumnDefinition x:Name="TypeColumn" Width="200" />
                 <ColumnDefinition Width="auto" />
                 <ColumnDefinition Width="80" />
                 <ColumnDefinition Width="auto" />
@@ -112,7 +112,6 @@
                     <FontIcon Glyph="{x:Bind ViewModel.Sorter.SizeIcon, Mode=OneWay}" FontFamily="{StaticResource MaterialSymbolsFilled}" FontSize="15" />
                 </StackPanel>
             </Button>
-            
         </Grid>
 
         <ListView ItemsSource="{x:Bind ViewModel.FileDisplayViewModels}"  Grid.Row="1">
